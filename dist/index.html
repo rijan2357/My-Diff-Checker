@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Word-Level Diff Checker</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      padding: 20px;
+      min-height: 100vh;
+    }
+    h1 { font-size: 1.5rem; margin-bottom: 16px; }
+    .input-row {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .input-group {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .input-group label {
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin-bottom: 4px;
+    }
+    textarea {
+      width: 100%;
+      height: 260px;
+      padding: 10px;
+      font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, Consolas, monospace;
+      font-size: 14px;
+      line-height: 1.5;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      resize: vertical;
+      tab-size: 2;
+    }
+    textarea:focus { outline: 2px solid #86b7fe; border-color: #86b7fe; }
+    .diff-container {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 12px;
+      min-height: 120px;
+    }
+    .diff-container h2 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #555;
+    }
+    #diffDisplay {
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, Consolas, monospace;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+  </style>
+  <script type="module" crossorigin src="./assets/index-DornpNz7.js"></script>
+</head>
+<body>
+  <h1>Word-Level Diff Checker</h1>
+  <div class="input-row">
+    <div class="input-group">
+      <label for="leftInput">Original Text</label>
+      <textarea id="leftInput" placeholder="Paste or type original text here…"></textarea>
+    </div>
+    <div class="input-group">
+      <label for="rightInput">Modified Text</label>
+      <textarea id="rightInput" placeholder="Paste or type modified text here…"></textarea>
+    </div>
+  </div>
+  <div class="diff-container">
+    <h2>Diff Output</h2>
+    <pre id="diffDisplay" style="white-space: pre-wrap; word-break: break-word; font-family: monospace;"></pre>
+  </div>
+</body>
+</html>
